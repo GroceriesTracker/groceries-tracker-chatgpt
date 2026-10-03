@@ -12,7 +12,7 @@ ChatGPT should not ask the person to paste receipts, paste a server address, or 
 
 ## Who can connect
 
-A paid household. Each person signs in with their own Groceries Tracker account and picks the household at connect. Someone on the free plan is asked to upgrade. A member who is not the owner is told that the household owner needs a paid plan.
+Each person signs in with their own Groceries Tracker account and picks the household at connect.
 
 ## What ChatGPT receives
 

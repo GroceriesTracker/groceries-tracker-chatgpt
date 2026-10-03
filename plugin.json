@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "groceries-tracker",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Read a household's grocery spending. ChatGPT uses one read-only brief: categories, top items, stores, what changed, and a save plan.",
   "author": {
     "name": "Groceries Tracker",
@@ -17,7 +17,7 @@
       "interface": {
         "displayName": "Groceries Tracker",
         "shortDescription": "Household grocery spending",
-        "longDescription": "Read a household's grocery spending for the month. ChatGPT can see category totals, top items, stores, what changed, and a save plan. It also includes grocery names from the past week. The connection is read only. It cannot add or change receipts. A paid household can connect. Each person signs in with their own Groceries Tracker account.",
+        "longDescription": "Read a household's grocery spending for the month. ChatGPT can see category totals, top items, stores, what changed, and a save plan. It also includes grocery names from the past week. The connection is read only. It cannot add or change receipts. Each person signs in with their own Groceries Tracker account.",
         "developerName": "Groceries Tracker",
         "category": "Finance",
         "capabilities": [
@@ -93,7 +93,7 @@
         "commerce_description": "This plugin does not sell products or take payment."
       },
       "publication": {
-        "release_notes": "First release. One read-only household grocery brief for the month."
+        "release_notes": "Listing text updated for review."
       }
     }
   }

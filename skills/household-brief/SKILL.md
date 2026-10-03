@@ -32,7 +32,7 @@ Do not invent aisle numbers. Do not add store names that are not in the result. 
 
 Say the Groceries Tracker connection is not on. They can search for Groceries Tracker in ChatGPT and sign in with their Groceries Tracker account.
 
-A paid household can connect. Someone on the free plan needs to upgrade. A member who is not the owner needs the household owner to be on a paid plan.
+If the tool will not connect, say the Groceries Tracker connection is not available for this household and stop.
 
 Do not ask them to paste a server address. Do not ask to read their other chats, files, or accounts.
 
