@@ -9,6 +9,7 @@
     "url": "https://groceriestracker.com"
   },
   "homepage": "https://groceriestracker.com",
+  "repository": "https://github.com/GroceriesTracker/groceries-tracker-chatgpt",
   "license": "LicenseRef-GroceriesTracker-All-Rights-Reserved",
   "keywords": ["groceries", "household", "spending", "receipts"],
   "extensions": {
