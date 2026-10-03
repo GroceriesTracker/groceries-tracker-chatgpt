@@ -1,0 +1,99 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "groceries-tracker",
+  "version": "1.0.0",
+  "description": "Read a household's grocery spending. ChatGPT uses one read-only brief: categories, top items, stores, what changed, and a save plan.",
+  "author": {
+    "name": "Groceries Tracker",
+    "email": "support@groceriestracker.com",
+    "url": "https://groceriestracker.com"
+  },
+  "homepage": "https://groceriestracker.com",
+  "license": "LicenseRef-GroceriesTracker-All-Rights-Reserved",
+  "keywords": ["groceries", "household", "spending", "receipts"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Groceries Tracker",
+        "shortDescription": "Household grocery spending",
+        "longDescription": "Read a household's grocery spending for the month. ChatGPT can see category totals, top items, stores, what changed, and a save plan. It also includes grocery names from the past week. The connection is read only. It cannot add or change receipts. A paid household can connect. Each person signs in with their own Groceries Tracker account.",
+        "developerName": "Groceries Tracker",
+        "category": "Finance",
+        "capabilities": [
+          "Read this month's spending",
+          "See categories, items, and stores",
+          "Plan a cut"
+        ],
+        "websiteURL": "https://groceriestracker.com",
+        "supportURL": "https://groceriestracker.com",
+        "privacyPolicyURL": "https://groceriestracker.com/privacy",
+        "termsOfServiceURL": "https://groceriestracker.com/terms",
+        "defaultPrompt": [
+          "What did our household spend on groceries this month?",
+          "Which categories cost the most this month?",
+          "How can we spend about 100 less next month?"
+        ],
+        "brandColor": "#C91818",
+        "brandColorDark": "#F75555",
+        "composerIcon": "./assets/icon.png",
+        "logo": "./assets/icon.png"
+      },
+      "onboardingSkill": "./skills/household-brief/SKILL.md",
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "This month's grocery total",
+              "prompt": "What did our household spend on groceries this month?",
+              "tools_triggered": "get_household_brief",
+              "expected_behavior": "Call get_household_brief once for the current month and lead with the household total."
+            },
+            {
+              "description": "Highest categories",
+              "prompt": "Which categories cost the most this month?",
+              "tools_triggered": "get_household_brief",
+              "expected_behavior": "Call get_household_brief once and name the highest category totals from the result."
+            },
+            {
+              "description": "Change from last month",
+              "prompt": "What changed in our grocery spending compared with last month?",
+              "tools_triggered": "get_household_brief",
+              "expected_behavior": "Call get_household_brief once for the current month and describe what changed, using only figures in the result."
+            },
+            {
+              "description": "A cut of about 100",
+              "prompt": "How can we spend about 100 less on groceries next month?",
+              "tools_triggered": "get_household_brief",
+              "expected_behavior": "Call get_household_brief once with saveTarget 100 and share the save plan from the result."
+            },
+            {
+              "description": "A month with no receipts",
+              "prompt": "What did we spend on groceries in a month that has no receipts?",
+              "tools_triggered": "get_household_brief",
+              "expected_behavior": "Call get_household_brief once for that month and say there are no receipts, in one sentence."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Cannot add a receipt",
+              "prompt": "Add a grocery receipt for milk and eggs."
+            },
+            {
+              "description": "Cannot delete receipts",
+              "prompt": "Delete all of our grocery receipts."
+            },
+            {
+              "description": "Cannot read a household that is not connected",
+              "prompt": "Show grocery spending for a different household than the one I connected."
+            }
+          ]
+        },
+        "commerce": false,
+        "commerce_description": "This plugin does not sell products or take payment."
+      },
+      "publication": {
+        "release_notes": "First release. One read-only household grocery brief for the month."
+      }
+    }
+  }
+}
